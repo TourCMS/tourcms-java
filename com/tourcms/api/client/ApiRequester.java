@@ -57,10 +57,6 @@ public class ApiRequester {
 
       String uri = scheme + "://" + host + path;
 
-      /*URIBuilder uriBuilder = new URIBuilder(baseURI);
-      uriBuilder.addParameters(qParams);
-      URI uri = uriBuilder.build();*/
-
       HttpGet httpGet = new HttpGet(uri);
       httpGet.setHeader("x-tourcms-date", currDate);
       String sUri = httpGet.getURI().toString();
@@ -91,8 +87,6 @@ public class ApiRequester {
 
          }
       }
-      //IMarshaller marshaller = new TourcmsMarshaller();
-      //rsp = marshaller.unmarshal(body);
 
        return body;
    }

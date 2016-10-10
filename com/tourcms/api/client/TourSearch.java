@@ -42,7 +42,6 @@ public class TourSearch {
     * @throws Exception
     */
 
-
    public String searchTours(List<NameValuePair> qParams)throws Exception {
 
       String body = null;
