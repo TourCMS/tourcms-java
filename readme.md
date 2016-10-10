@@ -3,7 +3,7 @@
 ## Dependencies
 
 * [commons-codec](https://commons.apache.org/proper/commons-codec/download_codec.cgi)
-
+* [apache http](https://hc.apache.org/downloads.cgi) 
 * [log4J](http://logging.apache.org/log4j/1.2/)
 
 ## Usage
