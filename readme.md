@@ -1,4 +1,4 @@
-# Sample Java code for the TourCMS API
+# Sample Java code for accessing the TourCMS API
 
 ## Dependencies
 
