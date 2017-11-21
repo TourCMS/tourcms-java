@@ -1,28 +1,20 @@
 package com.tourcms.api.client;
 
 import java.io.IOException;
-import java.net.URI;
-import java.util.ArrayList;
-import java.util.List;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+import java.util.TimeZone;
 
 import org.apache.http.HttpEntity;
-import org.apache.http.entity.ByteArrayEntity;
 import org.apache.http.HttpResponse;
-import org.apache.http.NameValuePair;
-import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
-import org.apache.http.client.utils.URIUtils;
-import org.apache.http.client.utils.URIBuilder;
+import org.apache.http.entity.ByteArrayEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
-import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 import org.apache.log4j.Logger;
-import org.joda.time.DateTime;
-import org.joda.time.DateTimeZone;
-import org.joda.time.format.DateTimeFormat;
-import org.joda.time.format.DateTimeFormatter;
 
 public class ApiRequester {
 
@@ -51,11 +43,12 @@ public class ApiRequester {
 
       String body = null;
 
-      long time = System.currentTimeMillis();
-      DateTime dt = new DateTime(time);
-      DateTime dtGmt = dt.withZone(DateTimeZone.UTC);
-      DateTimeFormatter fmt = DateTimeFormat.forPattern("EEE, dd MMM yyyy HH:mm:ss zzz");
-      String currDate = fmt.print(dtGmt);
+      long time = System.currentTimeMillis();    
+      Date dt = new Date(time);
+	  SimpleDateFormat ft = new SimpleDateFormat ("EEE, dd MMM yyyy HH:mm:ss zzz", Locale.ENGLISH);
+	  ft.setTimeZone(TimeZone.getTimeZone("GMT"));
+	  String currDate = ft.format(dt);
+	  
 
       String uri = scheme + "://" + host + path;
 
